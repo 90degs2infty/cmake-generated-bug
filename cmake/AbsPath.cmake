@@ -9,7 +9,6 @@ function(is_generated var source target)
     cmake_path(ABSOLUTE_PATH source BASE_DIRECTORY "${_target_binary_dir}" NORMALIZE OUTPUT_VARIABLE _generated_candidate)
     if(TRIGGER_WRONG_SEARCH)
         # Query the GENERATED property to determine, whether the given file is a generated one.
-        # This is the line that should go into absolutify_source's implementation eventually.
         get_source_file_property(_generated "${_generated_candidate}" TARGET_DIRECTORY "${target}" GENERATED)
     else()
         # To avoid querying the GENERATED property, hard-code the distinction between generated
